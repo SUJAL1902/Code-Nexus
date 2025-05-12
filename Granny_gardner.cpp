@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-struct FlowerCounts {
+struct Flower {
     int sunbuds = 0;
     int moonblossoms = 0;
     int starroots = 0;
@@ -10,7 +10,7 @@ struct FlowerCounts {
     int resting = 0;
 };
 
-void processDay(int day, FlowerCounts &f) {
+void PD(int day, Flower &f) {
     cout << "Today is Day " << day << " : ";
 
     if (day % 12 == 0) {
@@ -50,7 +50,7 @@ void processDay(int day, FlowerCounts &f) {
     cout << endl;
 }
 
-void printSummary(const FlowerCounts &f) {
+void Summary(const Flower &f) {
     int total = f.sunbuds + f.moonblossoms + f.starroots + f.crystal + f.wildleaf;
     cout << "\nFinal Summary:\n";
     cout << "--------------------\n";
@@ -72,15 +72,15 @@ int main() {
     cout << "Kitne Dino tak Phool lagau : ";
     cin >> N;
 
-    FlowerCounts f; 
+    Flower f; 
 
     cout<<"\nDear Diary \nThese is what i did in the following days ";
     cout << "\nDaily Log:\n";
     for (int day = 1; day <= N; ++day) {
-        processDay(day, f);
+        PD(day, f);
     }
-    printSummary(f);
-    
+    Summary(f);
+
     cout<<"\nYour's - \nGranny's Granddaughter ";
     return 0;
 }
